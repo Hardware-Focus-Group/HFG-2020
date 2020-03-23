@@ -76,7 +76,7 @@ float ChangeOutputWeights[HiddenNodes + 1][OutputNodes];
 
 void setup() {
   dht.begin();
-  pinMode(A0, INPUT);
+  pinMode(A2, INPUT);
   Serial.begin(115200);
   randomSeed(analogRead(3));
   ReportEvery1000 = 1;
@@ -93,7 +93,7 @@ void loop () {
 
   float temp = dht.readTemperature();
   float humd = dht.readHumidity();
-  float light = analogRead(A0);
+  float light = analogRead(A2);
   temp = map(temp, 25, 50, 0, 1);
   humd = map(humd, 0, 100, 0, 1);
   light = map(light, 0, 1023, 0, 1);
